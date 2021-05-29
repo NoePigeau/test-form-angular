@@ -1,0 +1,25 @@
+<form class="container" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+
+    <input class="input" type="text" placeholder="LastName"[(ngModel)]="lastname" name="lastname" >
+    <input class="input" type="text" placeholder="FirstName"[(ngModel)]="firstname" name="firstname" >
+    <input class="input" type="email" placeholder="Email"[(ngModel)]="email" name="email" >
+    <input class="input" type="password" placeholder="Password"[(ngModel)]="password" name="password" >
+
+      <select  class="input"  name="gender">
+        <option value="gender" disabled selected>Choose Gender</option>
+        <option *ngFor="let i of gender" [value]="i">{{i}}</option>
+    </select> 
+    
+    <button class="btn" type="submit"> VALIDER </button>
+
+</form>
+
+
+<div *ngFor="let account of model">
+    <p>{{account.firstName}}</p>
+    <p>{{account.lastName}}</p>
+    <p>{{account.email}}</p>
+    <p>{{account.password}}</p>
+    <p>{{account.gender}}</p>
+
+</div>

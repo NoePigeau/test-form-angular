@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Valorant";
+    src: local("Valorant"), url("/assets/font/ValorantFont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Caviar";
+    src: local("Caviar"), url("/assets/font/CaviarDreams.ttf") format("truetype");
+}
+
+
+body {
+    background-color: #f5f6fa;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Caviar', Arial, sans-serif;
+    color: black;
+}
