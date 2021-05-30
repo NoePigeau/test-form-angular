@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
         value.firstname,
         value.email,
         value.password,
-        'male'
+        value.gend
       )
     );
     this.lastname = '';

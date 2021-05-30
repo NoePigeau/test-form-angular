@@ -1,11 +1,11 @@
 <form class="container" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
 
-    <input class="input" type="text" placeholder="LastName"[(ngModel)]="lastname" name="lastname" >
+    <input class="input" type="text" placeholder="LastName"[(ngModel)]="lastname" name="lastname" [ngClass]="lastname.length > 15 || lastname.length < 5 ? 'inputWrong' : 'input'">
     <input class="input" type="text" placeholder="FirstName"[(ngModel)]="firstname" name="firstname" >
     <input class="input" type="email" placeholder="Email"[(ngModel)]="email" name="email" >
     <input class="input" type="password" placeholder="Password"[(ngModel)]="password" name="password" >
 
-      <select  class="input"  name="gender">
+      <select  class="input"  [(ngModel)]="gend" name="gender">
         <option value="gender" disabled selected>Choose Gender</option>
         <option *ngFor="let i of gender" [value]="i">{{i}}</option>
     </select> 
@@ -14,12 +14,18 @@
 
 </form>
 
+<div class="displayBox">
+    <div *ngFor="let account of model" class="card">
 
-<div *ngFor="let account of model">
-    <p>{{account.firstName}}</p>
-    <p>{{account.lastName}}</p>
-    <p>{{account.email}}</p>
-    <p>{{account.password}}</p>
-    <p>{{account.gender}}</p>
+        <img src="/assets/img/hxh.jpeg" width="100%" style="border-radius: 10px 10px 0px 0px  ; ">
+        <div>
+            <h2 class="card-item">{{account.firstName}} {{account.lastName}}</h2>
+            <p class="card-item"><b> email :</b>  {{account.email}}</p>
+            <p class="card-item"><b> password :</b> {{account.password}}</p>
+            <p class="card-item"><b> gender :</b>  {{account.gender}}</p>
+        </div>
+        
+    
+    </div>
 
 </div>

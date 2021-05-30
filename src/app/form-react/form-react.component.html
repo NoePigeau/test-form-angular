@@ -1,0 +1,43 @@
+<form class="container" [formGroup]="reactForm" (ngSubmit)="onSubmit()">
+
+    <input required class="input" type="text" placeholder="LastName" formControlName="lastname" >
+    <div class="input-error" *ngIf="!reactForm.controls['lastname'].valid">
+       lastname is not valid
+    </div>
+    <input required class="input" type="text" placeholder="FirstName" formControlName="firstname" >
+    <div class="input-error" *ngIf="!reactForm.controls['firstname'].valid">
+        firstname is not valid
+     </div>
+    <input required class="input" type="email" placeholder="Email" formControlName="email" >
+    <div class="input-error" *ngIf="!reactForm.controls['email'].valid">
+        email is not valid
+     </div>
+    <input required class="input" type="password" placeholder="Password" formControlName="password" >
+    <div class="input-error" *ngIf="!reactForm.controls['password'].valid">
+        password is not valid
+     </div>
+
+      <select  class="input"  formControlName="gender">
+        <option value="" disabled selected>Choose Gender</option>
+        <option *ngFor="let i of gender" [value]="i">{{i}}</option>
+    </select> 
+    
+    <button class="btn" type="submit" [disabled]="reactForm.invalid"> VALIDER </button>
+
+</form>
+
+<div class="displayBox">
+    <div *ngFor="let account of accounts" class="card">
+
+        <img src="/assets/img/hxh.jpeg" width="100%" style="border-radius: 10px 10px 0px 0px  ; ">
+        <div>
+            <h2 class="card-item">{{account.firstName}} {{account.lastName}}</h2>
+            <p class="card-item"><b> email :</b>  {{account.email}}</p>
+            <p class="card-item"><b> password :</b> {{account.password}}</p>
+            <p class="card-item"><b> gender :</b>  {{account.gender}}</p>
+        </div>
+        
+    
+    </div>
+
+</div>
