@@ -1,0 +1,2 @@
+<input [ngStyle]="input" #lettres (keyup)="0">
+<h3 [ngClass]="lettres.value.length > 20 ? 'trops' : 'parfait'">{{ lettres.value.length }}</h3>
